@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HDI Prediction</title>
+</head>
+
+<body>
+
+<h1>Human Development Index Prediction</h1>
+
+<form action="/predict" method="post">
+
+<input type="number" step="any" name="life" placeholder="Life Expectancy">
+
+<input type="number" step="any" name="mean" placeholder="Mean Years School">
+
+<input type="number" step="any" name="expected" placeholder="Expected Years School">
+
+<input type="number" step="any" name="gni" placeholder="GNI Per Capita">
+
+<br><br>
+
+<button type="submit">
+
+Predict
+
+</button>
+
+</form>
+
+{% if prediction %}
+
+<h2>Predicted HDI : {{ prediction }}</h2>
+
+{% endif %}
+
+</body>
+
+</html>
