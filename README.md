@@ -117,7 +117,10 @@ The model predicts one of the following HDI categories:
 **H. Subhiksha**
 
 B.Tech – Artificial Intelligence and Machine Learning
+## Project Demo
 
+🎥 Demo Video:
+https://drive.google.com/file/d/1rjf9hbvhUZewi8i8wGVcMjUzGZE0tCG4/view?usp=drivesdk
 GitHub: https://github.com/Subhiksha-HS
 
 ---
