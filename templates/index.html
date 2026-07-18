@@ -1,38 +1,161 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>HDI Prediction</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Human Development Index Prediction</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 
 <body>
 
-<h1>Human Development Index Prediction</h1>
+<div class="container">
 
-<form action="/predict" method="post">
+    <div class="header">
 
-<input type="number" step="any" name="life" placeholder="Life Expectancy">
+        <h1>🌍 Human Development Index Prediction System</h1>
 
-<input type="number" step="any" name="mean" placeholder="Mean Years School">
+        <p>
+            <strong>Human Development Index (HDI)</strong> is a statistical measure
+            developed by the United Nations Development Programme (UNDP)
+            to evaluate the development level of a country.
+        </p>
 
-<input type="number" step="any" name="expected" placeholder="Expected Years School">
+        <p>HDI is based on three important dimensions:</p>
 
-<input type="number" step="any" name="gni" placeholder="GNI Per Capita">
+        <ul>
+            <li>❤️ <b>Health</b> – Life Expectancy at Birth</li>
+            <li>📚 <b>Education</b> – Mean Years of Schooling and Expected Years of Schooling</li>
+            <li>💰 <b>Standard of Living</b> – Gross National Income (GNI) Per Capita</li>
+        </ul>
 
-<br><br>
+        <br>
 
-<button type="submit">
+        <h3>HDI Categories</h3>
 
-Predict
+        <ul>
+            <li>🟢 Very High Human Development</li>
+            <li>🟡 High Human Development</li>
+            <li>🟠 Medium Human Development</li>
+            <li>🔴 Low Human Development</li>
+        </ul>
 
-</button>
+        <br>
 
-</form>
+        <p>
+            Enter the country values below and click
+            <b>Predict HDI</b> to know the predicted Human Development Category.
+        </p>
 
-{% if prediction %}
+    </div>
 
-<h2>Predicted HDI : {{ prediction }}</h2>
+    <form action="/predict" method="POST">
 
-{% endif %}
+        <div class="input-group">
+
+            <label>❤️ Life Expectancy</label>
+
+            <input
+                type="number"
+                step="any"
+                name="life"
+                placeholder="Example : 72.5"
+                required>
+
+        </div>
+
+        <div class="input-group">
+
+            <label>📚 Mean Years of Schooling</label>
+
+            <input
+                type="number"
+                step="any"
+                name="mean"
+                placeholder="Example : 10.4"
+                required>
+
+        </div>
+
+        <div class="input-group">
+
+            <label>🎓 Expected Years of Schooling</label>
+
+            <input
+                type="number"
+                step="any"
+                name="expected"
+                placeholder="Example : 15.2"
+                required>
+
+        </div>
+
+        <div class="input-group">
+
+            <label>💰 GNI Per Capita</label>
+
+            <input
+                type="number"
+                step="any"
+                name="gni"
+                placeholder="Example : 12000"
+                required>
+
+        </div>
+
+        <button type="submit">
+            🚀 Predict HDI
+        </button>
+
+    </form>
+
+    {% if prediction %}
+
+    <div class="result">
+
+        <h2>Prediction Result</h2>
+
+        <h1>{{ prediction }}</h1>
+
+        <h3>{{ level }}</h3>
+
+        {% if prediction == "Very High" %}
+            <p>
+                Countries in this category have excellent healthcare,
+                quality education, and a high standard of living.
+            </p>
+
+        {% elif prediction == "High" %}
+            <p>
+                Countries in this category have strong development
+                with good education and healthcare facilities.
+            </p>
+
+        {% elif prediction == "Medium" %}
+            <p>
+                Countries in this category have moderate development
+                and are improving in health, education, and income.
+            </p>
+
+        {% elif prediction == "Low" %}
+            <p>
+                Countries in this category need significant improvements
+                in healthcare, education, and economic growth.
+            </p>
+
+        {% endif %}
+
+    </div>
+
+    {% endif %}
+
+</div>
 
 </body>
 
