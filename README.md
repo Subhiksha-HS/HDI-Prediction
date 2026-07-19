@@ -165,6 +165,10 @@ This project includes exploratory data analysis using Matplotlib and Seaborn.
 
 ![GNI Box Plot](visualizations/gni_boxplot.png)
 
+## Project Output
+
+![Project Output](images/output.png)
+
 ## Data Preprocessing
 
 The dataset was preprocessed before model training by performing the following steps:
