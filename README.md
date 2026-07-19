@@ -79,6 +79,68 @@ HDI-Prediction/
     ├── style.css
     └── hdi.png
 ```
+## Entity Relationship (ER) Diagram
+
+The following ER diagram represents the conceptual database design for the Human Development Index (HDI) Prediction System.
+
+```mermaid
+erDiagram
+
+USER ||--o{ HDI_INPUT_DATA : submits
+COUNTRY ||--o{ HDI_INPUT_DATA : has
+HDI_INPUT_DATA ||--|| HDI_PREDICTION : generates
+ML_MODEL ||--o{ HDI_PREDICTION : predicts
+DATASET ||--o{ ML_MODEL : trains
+HDI_PREDICTION ||--o{ VISUALIZATION_REPORT : creates
+USER ||--o{ SESSION : starts
+
+USER {
+    int user_id PK
+    string name
+    string email
+    string role
+}
+
+COUNTRY {
+    int country_id PK
+    string country_name
+    string region
+}
+
+HDI_INPUT_DATA {
+    int input_id PK
+    float life_expectancy
+    float mean_years_school
+    float expected_years_school
+    float gni
+}
+
+ML_MODEL {
+    int model_id PK
+    string algorithm
+    float accuracy
+}
+
+HDI_PREDICTION {
+    int prediction_id PK
+    string predicted_category
+}
+
+DATASET {
+    int dataset_id PK
+    string dataset_name
+}
+
+VISUALIZATION_REPORT {
+    int report_id PK
+    string graph_type
+}
+
+SESSION {
+    int session_id PK
+    datetime login_time
+}
+```
 ## Data Visualization
 
 This project includes exploratory data analysis using Matplotlib and Seaborn.
