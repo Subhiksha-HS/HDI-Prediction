@@ -100,6 +100,23 @@ This project includes exploratory data analysis using Matplotlib and Seaborn.
 
 ![GNI Box Plot](visualizations/gni_boxplot.png)
 
+## Data Preprocessing
+
+The dataset was preprocessed before model training by performing the following steps:
+
+- Loaded the HDI dataset using Pandas.
+- Checked for missing (null) values.
+- Removed missing records using `dropna()`.
+- Selected the independent variables:
+  - Life Expectancy
+  - Mean Years of Schooling
+  - Expected Years of Schooling
+  - Gross National Income (GNI)
+- Selected the dependent variable:
+  - HDI Category
+- Applied Label Encoding to convert categorical HDI labels into numerical values.
+- Split the dataset into training and testing sets using an 80:20 ratio.
+
 ## 🎥 Demo Video
 
 Watch the complete project demonstration here:
