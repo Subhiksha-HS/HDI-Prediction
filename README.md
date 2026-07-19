@@ -141,6 +141,9 @@ SESSION {
     datetime login_time
 }
 ```
+## Entity Relationship (ER) Diagram
+
+![ER Diagram](images/ER_Diagram.png)
 ## Data Visualization
 
 This project includes exploratory data analysis using Matplotlib and Seaborn.
