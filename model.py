@@ -1,18 +1,47 @@
 import pandas as pd
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
 import joblib
 
-# Load dataset
+# ==========================
+# Load Dataset
+# ==========================
 data = pd.read_csv("hdi.csv")
 
-# Features
-X = data.drop("HDI", axis=1)
+# ==========================
+# Check Missing Values
+# ==========================
+print("Missing Values:")
+print(data.isnull().sum())
 
-# Target
+# Remove missing values (if any)
+data.dropna(inplace=True)
+
+# ==========================
+# Select Features (Independent Variables)
+# ==========================
+X = data[[
+    "LifeExpectancy",
+    "MeanYearsSchool",
+    "ExpectedYearsSchool",
+    "GNI"
+]]
+
+# ==========================
+# Select Target (Dependent Variable)
+# ==========================
 y = data["HDI"]
 
-# Split
+# ==========================
+# Label Encoding
+# ==========================
+label_encoder = LabelEncoder()
+y = label_encoder.fit_transform(y)
+
+# ==========================
+# Split Dataset
+# ==========================
 X_train, X_test, y_train, y_test = train_test_split(
     X,
     y,
@@ -20,12 +49,15 @@ X_train, X_test, y_train, y_test = train_test_split(
     random_state=42
 )
 
-# Train model
+# ==========================
+# Train Model
+# ==========================
 model = RandomForestClassifier(random_state=42)
-
 model.fit(X_train, y_train)
 
-# Save model
+# ==========================
+# Save Model
+# ==========================
 joblib.dump(model, "hdi_model.pkl")
 
-print("✅ Model Saved Successfully")
+print("✅ Model trained and saved successfully!")
