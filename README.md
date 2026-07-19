@@ -79,7 +79,12 @@ HDI-Prediction/
     ├── style.css
     └── hdi.png
 ```
+## 🎥 Demo Video
 
+Watch the complete project demonstration here:
+
+**🔗 Demo Video:**  
+https://drive.google.com/file/d/118ijjQp7VncXVvQUqEN9wlnky4swBv40/view?usp=drivesdk
 ## 👩‍💻 Author
 
 **Subhiksha H.S.**
