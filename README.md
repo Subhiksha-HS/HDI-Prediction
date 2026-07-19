@@ -79,6 +79,27 @@ HDI-Prediction/
     ├── style.css
     └── hdi.png
 ```
+## Data Visualization
+
+This project includes exploratory data analysis using Matplotlib and Seaborn.
+
+### Graphs
+
+- Distribution of Life Expectancy
+- Life Expectancy vs HDI
+- Correlation Heatmap
+- GNI Distribution (Box Plot)
+
+### Outputs
+
+![Life Expectancy Distribution](visualizations/life_expectancy_distribution.png)
+
+![Life Expectancy vs HDI](visualizations/life_expectancy_vs_hdi.png)
+
+![Correlation Heatmap](visualizations/correlation_heatmap.png)
+
+![GNI Box Plot](visualizations/gni_boxplot.png)
+
 ## 🎥 Demo Video
 
 Watch the complete project demonstration here:
